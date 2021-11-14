@@ -1,0 +1,27 @@
+@using AntDesign.TableModels
+@if (quotesList.Count == 0)
+{
+    <Spin></Spin>
+}
+else
+{
+    <Table TItem="Trump" DataSource=quotesList>
+    <AntDesign.Column @bind-Field="@(context.quote_id)" Title="ID"></AntDesign.Column>
+    <AntDesign.Column @bind-Field="@(context.value)"Title="Quote"/>
+</Table>
+}
+
+
+@code
+{
+    private DataManager dataManager = new DataManager();
+    List<Trump> quotesList = new List<Trump>();
+    Trump[] quotesarray;
+
+        protected override async Task OnInitializedAsync()
+        {
+            quotesList = await dataManager.getDataAsync();
+            quotesarray = quotesList.ToArray();
+            
+        }
+}

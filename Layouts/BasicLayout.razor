@@ -1,0 +1,17 @@
+﻿@namespace quotes
+@inherits LayoutComponentBase
+<div>
+    <Layout>
+      <div class="logo" >
+      </div>
+        <Menu Theme="MenuTheme.Dark" Mode="MenuMode.Horizontal" DefaultSelectedKeys=@(new[]{"1"})>
+            <MenuItem Key="1">Home</MenuItem>
+            
+        </Menu>
+        <Content Style="padding: 25px;">
+            @Body
+        </Content>
+            <Footer Style="text-align: center; ">Derek</Footer>
+    </Layout>
+
+</div>
